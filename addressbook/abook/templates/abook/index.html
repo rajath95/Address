@@ -1,0 +1,32 @@
+<html>
+<head>
+
+<style>
+ body {
+ 	
+ 	background-color: black;	
+ 	color: white;
+ 	font-family: Ubuntu;
+ }
+
+center { font-family:Ubuntu; }
+</style>
+</head> 	
+<body>
+	
+
+{% if profile %}
+	<h1>  <center> WELCOME TO CRICKET PROFILES! </center> <h1>
+	<ul>
+		{% for item in profile %}
+			<li> <a href="/abook/{{item.id}}/">{{item.first_name}}</a>
+			</li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p> No players have been entered </p>
+
+{% endif %}
+
+</body>
+</html>

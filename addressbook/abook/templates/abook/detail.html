@@ -1,0 +1,42 @@
+
+<html>
+<title> PROFILE </title>
+<head>
+<style>
+
+body {background-color: purple;
+	  font-family: Ubuntu;
+	  color: white;
+	  } 
+a {color:green; 
+	background: pink;}	  
+
+</style>
+<script src="/javascripts/prototype.js" type="text/javascript"></script>
+
+<body>
+
+<center> <h2> PROFILE </h2> </center>
+ 
+<center>
+<table border="3px solid black" width="400" cellpadding="5" cellspacing="5">
+	<tr>
+		<th> Player No. </th>  
+		<th> Name </th>
+		<th> Place </th>
+	</tr>
+	<tr>
+		<b> <td> {{person.aadhaar}}	</td>
+		<td> {{person.first_name}}{{person.last_name}} </td>
+		<td> {{person.address}} </td> </b>
+</table>
+
+<br />
+<br />
+<a href="/abook/stats/{{person.id}}"> Click for stats </a>
+</center>
+</body>
+</html>
+
+ 
+
