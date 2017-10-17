@@ -1,9 +1,25 @@
 <html>
 <head>
+
 <title> Stats </title>
+<style type="text/css">
+	body,h1 {
+			background-color:purple;
+			color: gold;
+			font-family: Liberation Serif;
+
+		}
+	a { color:white;
+		font-size: 50px;
+		background: black; }
+
+</style>
+
 </head>
 
-<h1> Stats of {{person.first_name}} {{person.last_name}} </h1>
+<body>
+
+<h1> <center> Stats of {{person.first_name}} {{person.last_name}} </h1> </center>
 
 Enter the required stats
 
@@ -21,6 +37,12 @@ Strike Rate
 
 Average
 
+<br/>
+<br/>
+<br/>
+<center><a href="/abook/addstats/{{person.id}}" style="text-decoration: none">Click to edit stats</a> </center>
 
-<body>
 
+</body>
+
+</html>

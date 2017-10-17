@@ -1,6 +1,6 @@
 from django.shortcuts import render,get_object_or_404
 from django.template import loader
-
+from abook.forms import ContactForm,PlayerForm
 from django.http import HttpResponse
 from abook.models import Person
 def index(request):
@@ -35,7 +35,19 @@ def stats(request,question_id):
 	#return HttpResponse(response)
 
 
-#def addplayer(request):
+def addstats(request,player_id):
+
+	form_class=ContactForm
+	person1=get_object_or_404(Person,pk=player_id)
+	
+	return render(request,'abook/addstats.html',{'form':form_class,'person':person1})
+
+def addplayer(request):
+	form_class=PlayerForm
+
+	return render(request,'abook/addplayer.html',{'form':form_class})
+
+
 
 
 

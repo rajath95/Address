@@ -9,14 +9,43 @@
  	font-family: Ubuntu;
  }
 
+#aF {
+	color:red;
+	background: purple;
+	font-family:Arial;
+}
+
+#q {
+	color:aqua;
+
+}
 center { font-family:Ubuntu; }
 </style>
+<script type="text/javascript">
+	
+
+var col = new String();
+var x=1;var y;
+
+function blink()
+{
+ if(x%2) 
+ {
+  col = "purple";
+ }else{
+  col = "white";
+ }
+
+ aF.style.color=col;x++;if(x>2){x=1};setTimeout("blink()",500);
+}
+</script>
+
 </head> 	
-<body>
+<body onload="blink()">
 	
 
 {% if profile %}
-	<h1>  <center> WELCOME TO CRICKET PROFILES! </center> <h1>
+	<h1 id="q">  <center > WELCOME TO CRICKET PROFILES! </center> <h1>
 	<ul>
 		{% for item in profile %}
 			<li> <a href="/abook/{{item.id}}/">{{item.first_name}}</a>
@@ -27,6 +56,8 @@ center { font-family:Ubuntu; }
 	<p> No players have been entered </p>
 
 {% endif %}
+
+<center> <a id="aF" href="addplayer/" style="text-decoration: none" > Click to add new Player</a> </center>
 
 </body>
 </html>
