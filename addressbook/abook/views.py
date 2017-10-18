@@ -1,8 +1,10 @@
 from django.shortcuts import render,get_object_or_404
 from django.template import loader
-from abook.forms import ContactForm,PlayerForm
+from abook.forms import StatForm,PlayerForm
 from django.http import HttpResponse
-from abook.models import Person
+from abook.models import Person,Stat
+
+
 def index(request):
 	output="The players in the database are:  "
 	profile=Person.objects.all()
@@ -37,18 +39,20 @@ def stats(request,question_id):
 
 def addstats(request,player_id):
 
-	form_class=ContactForm
+	form=StatForm(request.POST or None)
+	if form.is_valid():
+		form.save()
+
 	person1=get_object_or_404(Person,pk=player_id)
 	
-	return render(request,'abook/addstats.html',{'form':form_class,'person':person1})
+	return render(request,'abook/addstats.html',{'form':form,'person':person1})
 
 def addplayer(request):
-	form_class=PlayerForm
+	form_class=PlayerForm(request.POST or None)
+
+	#if form_class.is_valid():
+	instance=form_class.save()
 
 	return render(request,'abook/addplayer.html',{'form':form_class})
-
-
-
-
 
 

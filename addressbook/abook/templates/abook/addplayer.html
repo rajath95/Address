@@ -17,12 +17,16 @@
 
 <body>
 	<h1> <center> ADD PLAYER </center> </h1>
-	<form role="form" action="" method="post">
-		<!--{% csrf token %} -->
+	<form action=" " method="post"> {% csrf_token %}
+
 		{{ form.as_p }}
 
+		
+
+
 		<center>
-		<button type="submit"> Submit </button> </center>
+		<br />
+		<button type="submit"> Add </button> </center>
 	</form
 ></body>
 </html>

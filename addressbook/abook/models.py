@@ -16,8 +16,18 @@ class Person(models.Model):
 	address=models.CharField(max_length=1000)
 	aadhaar=models.IntegerField("Player No.")
 
-class Office(models.Model):
-	aadhaar=models.ForeignKey(Person)
-	emp_role=models.CharField(max_length=20)
-	emp_salary=models.IntegerField("Enter Salary")
+	
+		
 
+class Stat(models.Model):
+	def __str__(self):
+		return str(self.aadhaar)
+
+	aadhaar=models.ForeignKey(Person,null=True,)
+	hundreds=models.IntegerField(null=True)
+	fifties=models.IntegerField(null=True)
+	sixes=models.IntegerField(null=True)
+	fours=models.IntegerField(null=True)
+	strike_rate=models.IntegerField("Strike Rate",null=True)
+	average=models.IntegerField(null=True)
+	

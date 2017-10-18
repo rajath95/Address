@@ -47,6 +47,10 @@ function blink()
 {% if profile %}
 	<h1 id="q">  <center > WELCOME TO CRICKET PROFILES! </center> <h1>
 	<ul>
+
+		<h5 style="font-family: Arial; color:gold"> hi {{ user }}, </h5>
+		<br /> 
+
 		{% for item in profile %}
 			<li> <a href="/abook/{{item.id}}/">{{item.first_name}}</a>
 			</li>

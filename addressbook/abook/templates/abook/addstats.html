@@ -17,11 +17,11 @@
 
 <body>
 	<h1> <center> ADD STATS </center> </h1>
-	<form role="form" action="" method="post">
+	<form role="form" action="" method="post"> {% csrf_token %}
 
 		{{ form.as_p }}
 		<center>
-		<button type="submit"> Submit </button> </center>
+		<a href="/abook/stats/{{person.id}}" style="text-decoration: none"> <button type="submit"> Save </button> </center></a>
 	</form>
 </body>
 </html>
